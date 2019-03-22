@@ -1,0 +1,27 @@
+body {
+	background-color: #eff0f0;
+	align-content: center;
+	font-family: 'Permanent Marker', cursive;
+}
+
+.devoured, .nondevoured {
+	background-color: #dfdfdf;
+	border-radius: 6px;
+	border: solid grey 1px;
+	height: 200px;
+	overflow: auto;
+}
+
+img {
+	max-width: 300px;
+}
+h1{
+	font-family: 'Permanent Marker', cursive;
+}
+
+li{
+	padding: 10px;
+}
+#newBurger{
+	margin-top: 20px;
+}

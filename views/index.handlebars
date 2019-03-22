@@ -1,0 +1,54 @@
+<div class="container">
+	<div class="row">
+		<div class= "col-m-12 text-center">
+			<img src="/burger.png" alt="burger">
+			<h1>EAT THE MONSTER BURGER!</h1>
+		</div>
+	</div>
+	<div class="row">
+	<div class="col-md-1"></div>
+		<div class ="col-md-4 nondevoured">
+		<!--non devoured burgers-->
+			<ol>
+			{{#each burger}}
+				{{#unless this.devoured}}
+
+				<li>{{this.burger_name}} 
+					<form method="POST" action="/burgers/eat?_method=PUT">
+					<input type="hidden" type="text" name="burger_id" value={{this.id}}>
+						<button type="submit" class="btn btn-default">DEVOUR!!!
+						</button>
+					</form> 
+				</li>
+				
+			{{/unless}}
+			{{/each}}
+			</ol>
+		</div>
+		<div class="col-md-2"></div>
+		<div class="col-md-4 devoured">
+		<!--devoured burgers-->
+			<ol>
+			{{#each burger}}
+				{{#if this.devoured}}
+				<li class="{{this.id}}">{{this.burger_name}}</li>
+			{{/if}}
+			{{/each}}	
+			</ol>
+
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+	<div class="row">
+	<div class = "col-md-3"></div>
+		<div class= "col-md-6 text-center">
+			<form action="/burgers/new" method="POST">
+				<div class="form-group">
+				<textarea class="form-control" rows="5" id="newBurger" name="burgerName"></textarea>
+				</div>
+				<button type="submit" class="btn btn-default">LINE EM UP</button>
+			</form>
+		</div>
+	<div class = "col-md-3"></div>
+	</div>
+</div>
